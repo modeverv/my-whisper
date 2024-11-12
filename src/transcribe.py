@@ -12,7 +12,8 @@ def format_timestamp(seconds: float) -> str:
 def process_audio():
     print("Loading Whisper model...")
     # Choose model size based on your needs: tiny, base, small, medium, large-v3
-    model = whisper.load_model("medium", device="cuda" if torch.cuda.is_available() else "cpu")
+    #model = whisper.load_model("medium", device="cuda" if torch.cuda.is_available() else "cpu")
+    model = whisper.load_model("turbo", device="cuda" if torch.cuda.is_available() else "cpu")
     
     input_path = Path("/app/input/audio.ogg")
     output_path = Path("/app/output/output.txt")

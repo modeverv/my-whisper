@@ -23,6 +23,8 @@ and `docker compose up` then into docker
 docker compose exec transcriber bash    
 # download model
 python3 -c "import whisper; whisper.load_model('medium')"
+python3 -c "import whisper; whisper.load_model('base')"
+python3 -c "import whisper; whisper.load_model('turbo')"
 ```
 
 ## wsl gpu setup
