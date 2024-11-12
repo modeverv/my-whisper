@@ -1,0 +1,6 @@
+openai-whisper==20240930
+#whisper-openai
+numpy>=1.24.3
+torch>=2.0.0
+torchaudio>=2.0.0
+ffmpeg-python>=0.2.0
