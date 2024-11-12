@@ -1,3 +1,4 @@
 output/*.txt
 input/*.mp4
 input/*.ogg
+whisper-models/*.pt

@@ -12,3 +12,35 @@
   - small: 良好な精度
   - medium: 高精度
   - large-v3: 最高精度、低速
+
+## pre load model
+
+comment in `docker-compose.yml` line 13
+and `docker compose up` then into docker
+
+```
+# into docker
+docker compose exec transcriber bash    
+# download model
+python3 -c "import whisper; whisper.load_model('medium')"
+```
+
+## wsl gpu setup
+
+```
+# NVIDIA-Container-Toolkitのインストール
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+curl -s -L https://nvidia.github.io/libnvidia-container/gpgkey | sudo apt-key add -
+curl -s -L https://nvidia.github.io/libnvidia-container/$distribution/libnvidia-container.list | sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+
+sudo apt-get update
+sudo apt-get install -y nvidia-container-toolkit
+```
+
+```
+# GPU認識の確認
+nvidia-smi
+
+# Dockerでのテスト
+docker run --rm --gpus all nvidia/cuda:11.0-base nvidia-smi
+```

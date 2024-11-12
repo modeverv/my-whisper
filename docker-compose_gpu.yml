@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  transcriber:
+    build:
+      context: .
+      dockerfile: Dockerfile.gpu
+    volumes:
+      - ./input:/app/input
+      - ./output:/app/output
+      - ./whisper-models:/root/.cache/whisper
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+

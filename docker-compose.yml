@@ -5,10 +5,10 @@ services:
     volumes:
       - ./input:/app/input
       - ./output:/app/output
-#    deploy:
-#      resources:
-#        reservations:
-#          devices:
-#            - driver: nvidia
-#              count: 1
-#              capabilities: [gpu]
+      - ./whisper-models:/root/.cache/whisper
+#    entrypoint: ["/bin/bash"]
+#    # コンテナを起動したままにする
+#    tty: true
+#    stdin_open: true
+
+
