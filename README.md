@@ -44,3 +44,18 @@ nvidia-smi
 # Dockerでのテスト
 docker run --rm --gpus all nvidia/cuda:11.0-base nvidia-smi
 ```
+
+## sample
+
+record video with obs and move to  `input` folder as `meeting.mp4`.  
+
+[音声ファイルを聞く](./sample/audio.ogg)  
+
+then,
+
+```
+[0:00:01] 政府をクレジットカードを持つ個人と考えてみるとわかりやすいぜ
+[0:00:05] 終入
+[0:00:06] わかりやすいのか?
+[0:00:08] それはよくわからないけどな
+```
